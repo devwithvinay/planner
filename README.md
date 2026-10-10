@@ -2,6 +2,8 @@
 
 A deployable Next.js + TypeScript + Supabase app for tracking a 90-day frontend/full-stack job preparation plan.
 
+### live :-https://planner-day-delta.vercel.app/
+
 ## Included
 - Email/password registration and login through Supabase Auth
 - Personalized daily checklists for DSA, aptitude, development, interview preparation, and career applications
@@ -39,18 +41,6 @@ Copy-Item .env.example .env.local
 
 Never put a Supabase `service_role` key in a `NEXT_PUBLIC_` variable or in frontend code. This app uses the public key and Row Level Security policies to isolate each user's data.
 
-## 4. Run locally
-```bash
-npm run dev
-```
-Open http://localhost:3000.
-
-## 5. Deploy to Vercel
-1. Push this folder to a new GitHub repository.
-2. Import the repository at https://vercel.com.
-3. Add the two environment variables from `.env.local` in Vercel Project Settings → Environment Variables.
-4. Deploy.
-5. In Supabase Auth URL Configuration, set Site URL to your deployed domain and add both local and production URLs to Redirect URLs.
 
 ## Important notes
 - The plan content is bundled in `lib/plan.ts`; you can edit tasks there.
