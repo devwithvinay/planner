@@ -1026,12 +1026,14 @@ export default function DashboardPage() {
                   <textarea
                     rows={4}
                     value={reviewDraft.wins}
-                    onChange={(event) =>
+                    onChange={(event) => {
+                      const value = event.currentTarget.value;
+
                       setReviewDraft((previous) => ({
                         ...previous,
-                        wins: event.currentTarget.value,
-                      }))
-                    }
+                        wins: value,
+                      }));
+                    }}
                     placeholder="This week I learned…"
                   />
                 </label>
@@ -1042,12 +1044,14 @@ export default function DashboardPage() {
                   <textarea
                     rows={4}
                     value={reviewDraft.challenges}
-                    onChange={(event) =>
+                    onChange={(event) => {
+                      const value = event.currentTarget.value;
+
                       setReviewDraft((previous) => ({
                         ...previous,
-                        challenges: event.currentTarget.value,
-                      }))
-                    }
+                        challenges: value,
+                      }));
+                    }}
                     placeholder="I got stuck on…"
                   />
                 </label>
@@ -1058,12 +1062,14 @@ export default function DashboardPage() {
                   <textarea
                     rows={4}
                     value={reviewDraft.next_week}
-                    onChange={(event) =>
+                    onChange={(event) => {
+                      const value = event.currentTarget.value;
+
                       setReviewDraft((previous) => ({
                         ...previous,
-                        next_week: event.currentTarget.value,
-                      }))
-                    }
+                        next_week: value,
+                      }));
+                    }}
                     placeholder="Next week I will…"
                   />
                 </label>
@@ -1074,15 +1080,17 @@ export default function DashboardPage() {
                     type="number"
                     min="0"
                     value={reviewDraft.applications_count}
-                    onChange={(event) =>
+                    onChange={(event) => {
+                      const value = Math.max(
+                        0,
+                        Number(event.currentTarget.value),
+                      );
+
                       setReviewDraft((previous) => ({
                         ...previous,
-                        applications_count: Math.max(
-                          0,
-                          Number(event.currentTarget.value),
-                        ),
-                      }))
-                    }
+                        applications_count: value,
+                      }));
+                    }}
                   />
                 </label>
               </div>
